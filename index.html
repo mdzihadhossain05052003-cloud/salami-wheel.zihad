@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Eid Salami Wheel</title>
+<style>
+body {
+  text-align:center;
+  font-family:sans-serif;
+  background:#1a0033;
+  color:white;
+}
+button {
+  padding:12px 25px;
+  font-size:18px;
+  background:orange;
+  border:none;
+  border-radius:10px;
+}
+input {
+  padding:10px;
+  border-radius:8px;
+}
+</style>
+</head>
+<body>
+
+<h2>🌙 Eid Salami Wheel 🎉</h2>
+
+<input id="name" placeholder="Enter your name"><br><br>
+
+<button onclick="spin()">SPIN 🎰</button>
+
+<h3 id="result"></h3>
+
+<script>
+let prizes = ["1 Taka","5 Taka","10 Taka","50 Taka","100 Taka","500 Taka 💛","Try Again 😅"];
+
+function spin(){
+  let name = document.getElementById("name").value;
+  if(name==""){
+    alert("Enter your name!");
+    return;
+  }
+  let result = prizes[Math.floor(Math.random()*prizes.length)];
+  document.getElementById("result").innerHTML =
+    name + ", you got: " + result;
+}
+</script>
+
+</body>
+</html>
